@@ -1,0 +1,37 @@
+name: Rubric Grader & Challenge Evaluator
+
+on:
+  pull_request:
+    paths:
+      - 'submissions/**'
+      - 'challenges/**'
+  workflow_dispatch:
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify Reference Solution (Baseline 100/100)
+        run: |
+          python3 scripts/evaluate_submission.py challenges/CHALLENGE-01-FLASHSALE-LOCKING/solution-reference/
+
+      - name: Grade Submissions
+        run: |
+          if [ -d "submissions" ]; then
+            for sub_dir in submissions/*/; do
+              if [ -d "$sub_dir" ]; then
+                echo "Evaluating $sub_dir..."
+                python3 scripts/evaluate_submission.py "$sub_dir"
+              fi
+            done
+          else
+            echo "No submissions folder yet. Reference baseline passed."
+          fi
