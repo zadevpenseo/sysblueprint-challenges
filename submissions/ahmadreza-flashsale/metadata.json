@@ -1,0 +1,12 @@
+{
+  "author_name": "Ahmad Reza Fahlevi",
+  "github_username": "ahmadreza-dev",
+  "avatar_url": "https://avatars.githubusercontent.com/u/10293847?v=4",
+  "bio": "Backend & Systems Engineer. Tertarik pada optimasi transaksi konkurensi tinggi dan basis data terdistribusi.",
+  "linkedin_url": "https://linkedin.com/in/ahmad-reza-fahlevi",
+  "challenge_id": "CHALLENGE-01-FLASHSALE-LOCKING",
+  "challenge_title": "High-Concurrency Flash-Sale Inventory Engine",
+  "summary": "Solusi penguncian transaksi inventaris menggunakan token reservasi dua fase dan check constraint matematis yang mencegah overselling secara mutlak.",
+  "preset_key": "ecommerce_flashsale",
+  "created_at": "2026-10-08"
+}

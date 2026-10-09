@@ -1,0 +1,23 @@
+[
+  {
+    "id": "sub_ahmadreza_dev_challenge_01_flashsale_locking",
+    "author": "Ahmad Reza Fahlevi",
+    "githubUsername": "ahmadreza-dev",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/10293847?v=4",
+    "bio": "Backend & Systems Engineer. Tertarik pada optimasi transaksi konkurensi tinggi dan basis data terdistribusi.",
+    "challengeId": "CHALLENGE-01-FLASHSALE-LOCKING",
+    "challengeTitle": "High-Concurrency Flash-Sale Inventory Engine",
+    "score": 100,
+    "predicate": "Distinction",
+    "submissionDate": "2026-10-08",
+    "submissionUrl": "https://github.com/zadevpenseo/sysblueprint-challenges/tree/main/submissions/ahmadreza-flashsale",
+    "linkedinUrl": "https://linkedin.com/in/ahmad-reza-fahlevi",
+    "summary": "Solusi penguncian transaksi inventaris menggunakan token reservasi dua fase dan check constraint matematis yang mencegah overselling secara mutlak.",
+    "presetKey": "ecommerce_flashsale",
+    "keyHighlights": [
+      "100/100 Skor Rubrik Otomatis",
+      "Verified Architecture Solution",
+      "Deterministic CI Passed"
+    ]
+  }
+]

@@ -5,7 +5,17 @@ on:
     paths:
       - 'submissions/**'
       - 'challenges/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'submissions/**'
+      - 'challenges/**'
+      - 'scripts/**'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   grade:
@@ -27,11 +37,18 @@ jobs:
         run: |
           if [ -d "submissions" ]; then
             for sub_dir in submissions/*/; do
-              if [ -d "$sub_dir" ]; then
+              if [ -d "$sub_dir" ] && [ "$(basename "$sub_dir")" != "TEMPLATE" ]; then
                 echo "Evaluating $sub_dir..."
                 python3 scripts/evaluate_submission.py "$sub_dir"
               fi
             done
-          else
-            echo "No submissions folder yet. Reference baseline passed."
           fi
+
+      - name: Update Hall of Fame (Main Branch Only)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          python3 scripts/generate_hall_of_fame.py
+          git config --local user.email "action@github.com"
+          git config --local user.name "SysBlueprint CI Bot"
+          git add data/hall_of_fame.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(ci): update hall_of_fame.json [skip ci]" && git push)

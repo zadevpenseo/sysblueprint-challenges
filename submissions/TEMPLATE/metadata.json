@@ -1,0 +1,12 @@
+{
+  "author_name": "Nama Lengkap Anda",
+  "github_username": "username-github",
+  "avatar_url": "https://avatars.githubusercontent.com/u/0000000?v=4",
+  "bio": "Software Engineer / Architecture Enthusiast",
+  "linkedin_url": "https://linkedin.com/in/username",
+  "challenge_id": "CHALLENGE-01-FLASHSALE-LOCKING",
+  "challenge_title": "High-Concurrency Flash-Sale Inventory Engine",
+  "summary": "Ringkasan 1-2 kalimat mengenai strategi arsitektur dan trade-off yang dipilih.",
+  "preset_key": "ecommerce_flashsale",
+  "created_at": "2026-10-09"
+}
